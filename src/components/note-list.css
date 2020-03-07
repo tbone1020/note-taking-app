@@ -1,5 +1,22 @@
 #notes-list {
     height: 100%;
-    width: 250px;
+    width: 350px;
     border-right: 1px solid black;
+}
+
+.notes-list-controls {
+    border-bottom: 1px solid black;
+    padding: 15px;
+    text-align: right;
+    display: flex;
+}
+
+.control-action {
+    cursor: pointer;
+    padding-right: 25px;
+    align-self: center;
+}
+
+.control-action .fal {
+    font-size: 25px;
 }

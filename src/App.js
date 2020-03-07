@@ -1,13 +1,21 @@
 import React from 'react';
 import './App.css';
 import NoteList from './components/note-list';
+import NoteArea from './components/note-area';
 
-function App() {
-  return (
-    <main role="main">
-      <NoteList />
-    </main>
-  );
+export default class App extends React.Component {
+
+  constructor() {
+    super();
+    this.state = {};
+  }
+
+  render() {
+    return (
+      <main role="main">
+        <NoteList />
+        <NoteArea />
+      </main>
+    );
+  }
 }
-
-export default App;
