@@ -4,7 +4,7 @@
     border-right: 1px solid black;
 }
 
-.notes-list-controls {
+#notes-list-controls {
     border-bottom: 1px solid black;
     padding: 15px;
     text-align: right;
@@ -19,4 +19,12 @@
 
 .control-action .fal {
     font-size: 25px;
+}
+
+#notes-container {
+    background: #eeeeee;
+    height: 100%;
+    max-height: -webkit-calc(100% - 55px);
+    max-height: calc(100% - 55px);
+    overflow-y: auto;
 }

@@ -1,7 +1,10 @@
 export default class NotepadStorage {
-    
-    static saveCurrentNotepad() {
 
+    static saveCurrentNotepad() {
+        
+    }
+    async bounce() {
+        
     }
 
     static deleteCurrentNotepad() {
@@ -9,7 +12,32 @@ export default class NotepadStorage {
     }
 
     static createNewNotepad() {
-        console.log("Creating New Note...");
+        let notepadCount = this.getNotepadIDCount();
+        console.log(notepadCount);
+        // let newNotepad = JSON.stringify({
+        //     id: notepadCount,
+        //     title: "Notepad",
+        //     date: this.getTodaysDate(),
+        //     bodyText: ""
+        // });
+    }
+ 
+   
+    static getNotepadIDCount() {
+        if (!window.localStorage.getItem('count')) {
+            window.localStorage.setItem('count', 1);
+        } else {
+            return window.localStorage.getItem('count');
+        }
+    }
+
+    getTodaysDate() {
+        let date = new Date();
+        return `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`;
+    }
+
+    static grabAllNotepads() {
+        
     }
 
     static getNotepadById(notepadId) {

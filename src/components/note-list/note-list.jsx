@@ -1,11 +1,10 @@
 import React from 'react';
 import './note-list.css';
-import NotepadStorage from '../helpers/notepad-storage';
+import NotepadStorage from '../../helpers/notepad-storage';
 
-class NoteList extends React.Component {
-    constructor() {
-        super();
-        this.state = {};
+export default class NoteList extends React.Component {
+    constructor(props) {
+        super(props);
     }
 
     create() {
@@ -18,7 +17,7 @@ class NoteList extends React.Component {
 
     render() {
         return(<section id="notes-list">
-            <div className="notes-list-controls">
+            <div id="notes-list-controls">
                 <div onClick={this.create} className="control-action">
                     <i className="fal fa-plus"></i>
                 </div>
@@ -26,8 +25,10 @@ class NoteList extends React.Component {
                     <i className="fal fa-trash"></i>
                 </div>
             </div>
+            <section id="notes-container">
+                
+            </section>
         </section>); 
     }
 }
 
-export default NoteList;

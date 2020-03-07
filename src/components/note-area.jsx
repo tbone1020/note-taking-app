@@ -1,7 +1,7 @@
 import React from 'react';
 import './note-area.css';
 
-class NoteArea extends React.Component {
+export default class NoteArea extends React.Component {
     constructor() {
         super();
         this.state = {}
@@ -13,5 +13,3 @@ class NoteArea extends React.Component {
         </section>); 
     }
 }
-
-export default NoteArea;

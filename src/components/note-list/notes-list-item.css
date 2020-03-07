@@ -1,0 +1,20 @@
+.notepad-item {
+    border-bottom: 1px solid black;
+    padding: 15px 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.notepad-item-wrapper {
+    width: 90%;
+    margin: auto;
+}
+
+.notepad-item-header {
+    font-weight: bold;
+    font-size: 17px;
+    padding-bottom: 10px;
+}
+
+.notepad-item-date {
+    padding-bottom: 5px;
+}
