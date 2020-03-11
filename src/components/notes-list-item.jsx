@@ -2,7 +2,7 @@ import React from 'react';
 import './notes-list-item.css';
 
 export default function NoteListItem(props) {
-    const { id, title, date, text } = props.notepad;
+    const { id, title, date, text } = props.notepadInfo;
     return (<article className="notepad-item">
         <div className="notepad-item-wrapper">
             <h2 className="notepad-item-header">{ title }</h2>

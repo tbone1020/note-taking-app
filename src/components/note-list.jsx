@@ -26,7 +26,7 @@ export default class NoteList extends React.Component {
                 </div>
             </div>
             <section id="notes-container">
-                
+                {this.props.listOfNotepads}
             </section>
         </section>); 
     }

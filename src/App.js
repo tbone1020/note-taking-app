@@ -11,26 +11,12 @@ export default class App extends React.Component {
     this.state = {
       notepadCount: 0,
       listOfNotePads: [],
+      currentActiveNotepad: null,
       localStorage: window.localStorage
     };
   }
 
   componentDidMount() {
-    // let lastNotepadEntered = JSON.parse(window.localStorage.getItem('notepads'))[1].id;
-    const dataStructure = {
-      count: 0,
-      notepads: [{
-        id: "notepad-1",
-        date: "3/9/2020",
-        titel: "notepad title 1",
-        text: "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum "
-      },{
-        id: "notepad-2",
-        date: "3/9/2020",
-        titel: "notepad title 2",
-        text: "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum "
-      }]
-    };
     this.setNotepadCount();
     this.setNotepadList();
   }
@@ -47,9 +33,9 @@ export default class App extends React.Component {
     if (notepadsList) {
       let parsedNotepadList = JSON.parse(notepadsList);
       let totalNotepads = parsedNotepadList.length;
-      let nextIDNumber = parsedNotepadList[totalNotepads - 1].id + 1;
-      this.setState({ notepadCount: nextIDNumber }, () => {
-        this.state.localStorage.setItem('count', nextIDNumber);
+      let newID = parsedNotepadList[totalNotepads - 1].id + 1;
+      this.setState({ notepadCount: newID }, () => {
+        this.state.localStorage.setItem('count', newID);
       });
     }
   }
@@ -57,23 +43,21 @@ export default class App extends React.Component {
   setNotepadList() {
     let listOfNotepads = JSON.parse(this.state.localStorage.getItem('notepads'));
     if (listOfNotepads) {
-      const listOfNotepadComponents = listOfNotepads.map((notepad, index) => {
-        console.log(notepad);
-        return <NotesListItem key={index} notepadInfo={notepad}/>
-      });
-      console.log(listOfNotepadComponents)
+      const listOfNotepadComponents = listOfNotepads.map((notepad, index) => <NotesListItem key={index} notepadInfo={notepad}/>);
+      this.setState({
+        listOfNotePads: listOfNotepadComponents,
+        currentActiveNotepad: listOfNotepads[0]
+      })
     }
-
-    // this.setState({
-    //     listOfNotePads: listOfNotepadComponents
-    // }, () => {});
   }
 
   render() {
     return (
       <main role="main">
-        <NoteList />
-        <NoteArea />
+        <section id="notepad-wrapper">
+          <NoteList count={this.state.notepadCount} listOfNotepads={this.state.listOfNotePads}/>
+          <NoteArea {...this.state.currentActiveNotepad} />
+        </section>
       </main>
     );
   }

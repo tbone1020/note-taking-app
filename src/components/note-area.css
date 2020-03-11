@@ -1,0 +1,23 @@
+#notepad-area {
+    width: -webkit-calc(100% - 350px);
+    width: calc(100% - 350px);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.notepad-header {
+    border-bottom: 1px solid black;
+    font-weight: bold;
+    font-size: 35px;
+}
+
+.notepad-body {
+    line-height: 20px;
+}
+
+.notepad-header {
+    padding: 10px 25px;
+} 
+
+.notepad-body {
+    padding: 30px 25px;
+}
