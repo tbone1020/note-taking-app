@@ -1,6 +1,6 @@
 import React from 'react';
 import './note-list.css';
-import NotepadStorage from '../../helpers/notepad-storage';
+import NotepadStorage from '../helpers/notepad-storage';
 
 export default class NoteList extends React.Component {
     constructor(props) {

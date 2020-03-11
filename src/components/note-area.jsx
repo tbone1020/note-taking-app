@@ -9,7 +9,7 @@ export default class NoteArea extends React.Component {
 
     render() {
         return(<section id="notes-list">
-            List of Notes
+            Note Area
         </section>); 
     }
 }

@@ -12,8 +12,7 @@ export default class NotepadStorage {
     }
 
     static createNewNotepad() {
-        let notepadCount = this.getNotepadIDCount();
-        console.log(notepadCount);
+        // let notepadCount = this.getNotepadIDCount();
         // let newNotepad = JSON.stringify({
         //     id: notepadCount,
         //     title: "Notepad",
