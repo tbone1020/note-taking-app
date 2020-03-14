@@ -2,7 +2,6 @@ import React from 'react';
 import './App.css';
 import NoteList from './components/note-list';
 import NoteArea from './components/note-area';
-import NotesListItem from './components/notes-list-item';
 
 export default class App extends React.Component {
 
@@ -13,10 +12,16 @@ export default class App extends React.Component {
       listOfNotePads: [],
       currentActiveNotepad: 0,
     };
+    this.updateMainState = this.updateMainState.bind(this);
   }
 
-  handleMainState(obj) {
-   this.setState(obj); 
+  updateMainState(updatedStateObject) {
+    if (this.state.currentActiveNotepad !== updatedStateObject.currentActiveNotepad) {
+      console.log("Updating State");
+      this.setState(updatedStateObject);
+    } else {
+      console.log("Not Updating State");
+    }
   }
 
   componentDidMount() {
@@ -42,8 +47,6 @@ export default class App extends React.Component {
 
   setNotepadList() {
     let listOfNotepads = JSON.parse(window.localStorage.getItem('notepads'));
-    console.log("List of listOfNotepads -----------")
-    console.log(listOfNotepads)
     if (listOfNotepads) {
       this.setState({
         listOfNotePads: listOfNotepads,
@@ -56,8 +59,8 @@ export default class App extends React.Component {
     return (
       <main role="main">
         <section id="notepad-wrapper">
-          <NoteList count={notepadCount} listOfNotepads={listOfNotePads}/>
-          {/* <NoteArea handleMainState={this.handleMainState} {...listOfNotePads[currentActiveNotepad]} /> */}
+          <NoteList updateMainState={this.updateMainState} count={notepadCount} listOfNotepads={listOfNotePads}/>
+          <NoteArea updateMainState={this.updateMainState} {...listOfNotePads[currentActiveNotepad]} />
         </section>
       </main>
     );

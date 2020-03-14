@@ -27,7 +27,7 @@ export default class NoteList extends React.Component {
                 </div>
             </div>
             <section id="notes-container">
-                {this.props.listOfNotepads.map((notepad, index) => <NotesListItem handleMainState={this.handleMainState} key={index} notepadInfo={notepad}/>)}
+                {this.props.listOfNotepads.map((notepad, index) => <NotesListItem updateMainState={this.props.updateMainState} key={index} notepadInfo={notepad}/>)}
             </section>
         </section>); 
     }
