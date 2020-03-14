@@ -1,6 +1,7 @@
 import React from 'react';
 import './note-list.css';
 import NotepadStorage from '../helpers/notepad-storage';
+import NotesListItem from './notes-list-item';
 
 export default class NoteList extends React.Component {
     constructor(props) {
@@ -26,7 +27,7 @@ export default class NoteList extends React.Component {
                 </div>
             </div>
             <section id="notes-container">
-                {this.props.listOfNotepads}
+                {this.props.listOfNotepads.map((notepad, index) => <NotesListItem handleMainState={this.handleMainState} key={index} notepadInfo={notepad}/>)}
             </section>
         </section>); 
     }
