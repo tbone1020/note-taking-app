@@ -4,7 +4,6 @@ import './note-area.css';
 export default class NoteArea extends React.Component {
     constructor(props) {
         super(props);
-        
     }
 
     saveAfterTime() {

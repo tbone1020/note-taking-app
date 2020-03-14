@@ -5,6 +5,11 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.notepad-item:hover {
+    background: #333333;
+    color: white;
+}
+
 .notepad-item-wrapper {
     width: 90%;
     margin: auto;

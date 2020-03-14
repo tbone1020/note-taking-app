@@ -25,6 +25,23 @@ export default class App extends React.Component {
   }
 
   componentDidMount() {
+    const notepads = JSON.stringify([{
+      id: 1,
+      date: "3/11/2020",
+      title: "Notepad Title 1",
+      text: "Text For Notepad Number 1"
+    }, {
+      id: 2,
+      date: "3/28/2020",
+      title: "Notepad Title 2",
+      text: "Text For Notepad Number 2"
+    }, {
+      id: 3,
+      date: "10/20/2020",
+      title: "Notepad Title 3",
+      text: "Text For Notepad Number 3"
+    }]);
+    // window.localStorage.setItem('notepads', notepads)
     this.setNotepadCount();
     this.setNotepadList();
   }
